@@ -72,6 +72,7 @@ nav {
 .menu {
   display: flex;
   align-items: center;
+  transition: all 0.3s linear;
   & li {
     margin-left: 3rem;
     padding: 10px;
@@ -101,6 +102,10 @@ nav {
 }
 .sticky-menu {
   display: none;
+  transition: all 0.3s linear;
+}
+.menu-active {
+  display: block;
 }
 
 @media screen and (max-width: 1023px) {
@@ -114,27 +119,76 @@ nav {
   }
   .menu {
     display: none;
+    & li {
+      margin-left: 0;
+      border-radius: 0;
+    }
   }
   .cart {
     display: none;
   }
+  .menu-active-main {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left: 3px solid #fff;
+  }
   .menu-sticky-logo {
-    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+
+      transform: translateY(6px) rotate(0);
+      transition: all 0.2s linear;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+
+      transform: translateY(-6px) rotate(0);
+      transition: all 0.3s linear;
+    }
+  }
+
+  .menu-sticky-cancel-active {
+    background-color: transparent;
+    &::before {
+      transform: translateY(0) rotate(45deg);
+    }
+    &::after {
+      transform: translateY(0) rotate(-45deg);
+    }
   }
   .sticky-menu {
-    display: none;
+    display: block;
     position: absolute;
     bottom: 0;
     right: 0;
     transform: translateY(100%) translateX(100%);
+    transition: all 0.3s linear;
     width: 30rem;
     height: auto;
     background-color: $blue-dark;
     z-index: 99;
-    transition: var(--transition);
+    transition: all 0.3s linear;
     & li {
       padding: 2rem;
-      border-bottom: 1px solid #fff;
+      transition: all 0.3s linear;
       &:last-child {
         border-bottom-color: transparent;
       }
@@ -144,9 +198,8 @@ nav {
     }
   }
   .menu-active {
-    transition: all 0.2s linear;
-    display: block;
     transform: translateY(100%) translateX(0%);
+    transition: all 0.3s linear;
   }
 }
 

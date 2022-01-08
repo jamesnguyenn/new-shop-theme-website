@@ -104,6 +104,7 @@ nav span {
 .menu {
   display: flex;
   align-items: center;
+  transition: all 0.3s linear;
 }
 .menu li {
   margin-left: 3rem;
@@ -136,6 +137,11 @@ nav span {
 
 .sticky-menu {
   display: none;
+  transition: all 0.3s linear;
+}
+
+.menu-active {
+  display: block;
 }
 
 @media screen and (max-width: 1023px) {
@@ -152,30 +158,78 @@ nav span {
   .menu {
     display: none;
   }
+  .menu li {
+    margin-left: 0;
+    border-radius: 0;
+  }
 
   .cart {
     display: none;
   }
 
+  .menu-active-main {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left: 3px solid #fff;
+  }
+
   .menu-sticky-logo {
-    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .menu-sticky-logo::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transform: translateY(6px) rotate(0);
+    transition: all 0.2s linear;
+  }
+  .menu-sticky-logo::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transform: translateY(-6px) rotate(0);
+    transition: all 0.3s linear;
+  }
+
+  .menu-sticky-cancel-active {
+    background-color: transparent;
+  }
+  .menu-sticky-cancel-active::before {
+    transform: translateY(0) rotate(45deg);
+  }
+  .menu-sticky-cancel-active::after {
+    transform: translateY(0) rotate(-45deg);
   }
 
   .sticky-menu {
-    display: none;
+    display: block;
     position: absolute;
     bottom: 0;
     right: 0;
     transform: translateY(100%) translateX(100%);
+    transition: all 0.3s linear;
     width: 30rem;
     height: auto;
     background-color: #0d59af;
     z-index: 99;
-    transition: var(--transition);
+    transition: all 0.3s linear;
   }
   .sticky-menu li {
     padding: 2rem;
-    border-bottom: 1px solid #fff;
+    transition: all 0.3s linear;
   }
   .sticky-menu li:last-child {
     border-bottom-color: transparent;
@@ -185,9 +239,8 @@ nav span {
   }
 
   .menu-active {
-    transition: all 0.2s linear;
-    display: block;
     transform: translateY(100%) translateX(0%);
+    transition: all 0.3s linear;
   }
 }
 @media screen and (max-width: 767.98px) {
