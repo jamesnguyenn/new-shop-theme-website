@@ -183,7 +183,7 @@ nav span {
     align-items: center;
     position: relative;
     cursor: pointer;
-    transition: all 0.3s linear;
+    transition: all 0.5s linear;
   }
   .menu-sticky-logo::before {
     content: "";
