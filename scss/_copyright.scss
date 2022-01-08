@@ -1,0 +1,34 @@
+.copyright {
+  padding: 2rem 10rem;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & i {
+    font-size: 3rem;
+    margin-left: 0.4rem;
+    cursor: pointer;
+  }
+  & i:first-child {
+    color: $button-color;
+  }
+  & i:nth-child(3) {
+    color: #657bc3;
+  }
+  & i:nth-child(4) {
+    color: #68c4ed;
+  }
+}
+
+.copyright-content {
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 767.98px) {
+  .copyright {
+    padding: 2rem 4.5rem;
+    & i {
+      font-size: 1.5rem;
+    }
+  }
+}

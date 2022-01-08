@@ -1,0 +1,71 @@
+.latest-fashion {
+  padding: 6rem 10rem;
+  text-align: center;
+  background-color: #f9f8f8;
+  cursor: pointer;
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+  }
+  &__item {
+    width: calc((100% / var(--three-column)) - var(--spacing));
+    position: relative;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+  }
+}
+
+.latest-fashion h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-header;
+  margin-bottom: 6rem;
+}
+
+.latest-fashion-image {
+  overflow: hidden;
+}
+
+.latest-fashion-image:hover img {
+  transform: scale(1.2);
+}
+
+.latest-fashion-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d59af9f;
+  color: #fff;
+  padding: 1rem;
+}
+
+.latest-fashion-discount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  background-color: $blue-dark;
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 1rem;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 767.98px) {
+  .latest-fashion {
+    padding: 2rem 4.5rem;
+  }
+  .latest-fashion__item {
+    width: calc((100% / var(--one-column)) - var(--spacing));
+  }
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 1179) {
+  .product-item {
+    width: calc((100% - var(--two-column)) - var(--spacing));
+  }
+}

@@ -1,0 +1,171 @@
+@import "variable";
+.header {
+  position: relative;
+}
+.login-section {
+  background-color: $blue-light;
+  padding: 0 90px;
+}
+.login {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.login-function {
+  margin-left: auto;
+}
+
+.login-help {
+  & a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    &:hover {
+      color: rgb(197, 197, 197);
+    }
+    span {
+      padding: 0 0.4rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
+.login-function {
+  & a {
+    color: #fff;
+    margin-left: 5rem;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    &:hover {
+      color: rgb(197, 197, 197);
+    }
+  }
+}
+nav {
+  background-color: $blue-dark;
+  padding: 2rem 9rem;
+  display: flex;
+  align-items: center;
+  & a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    &:hover {
+      color: rgb(197, 197, 197);
+    }
+  }
+  & span {
+    color: #fff;
+  }
+}
+.logo {
+  font-size: 2.5rem;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  & li {
+    margin-left: 3rem;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  & li a {
+    text-decoration: none;
+  }
+}
+.menu-active-main {
+  border: 1px solid #fff;
+}
+.cart {
+  margin-left: auto;
+  text-align: right;
+}
+
+.cart-item {
+  margin-bottom: 2px;
+  & i {
+    color: #fff;
+  }
+}
+
+.menu-sticky-logo {
+  display: none;
+}
+.sticky-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+  .menu {
+    display: none;
+  }
+  .cart {
+    display: none;
+  }
+  .menu-sticky-logo {
+    display: block;
+  }
+  .sticky-menu {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%) translateX(100%);
+    width: 30rem;
+    height: auto;
+    background-color: $blue-dark;
+    z-index: 99;
+    transition: var(--transition);
+    & li {
+      padding: 2rem;
+      border-bottom: 1px solid #fff;
+      &:last-child {
+        border-bottom-color: transparent;
+      }
+    }
+    & li a {
+      text-decoration: none;
+    }
+  }
+  .menu-active {
+    transition: all 0.2s linear;
+    display: block;
+    transform: translateY(100%) translateX(0%);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .login-section {
+    padding: 0 45px;
+  }
+  .login-function {
+    margin-left: auto;
+    display: flex;
+    font-size: 1rem;
+  }
+  .login-function a {
+    margin-left: 2rem;
+  }
+  .login-help a {
+    font-size: 1rem;
+  }
+  nav {
+    padding: 2rem 4.5rem;
+  }
+}

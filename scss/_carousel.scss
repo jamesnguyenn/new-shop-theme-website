@@ -1,0 +1,13 @@
+.carousel ol li {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+}
+
+.carousel-indicators .active {
+  background-color: $button-color;
+}
+
+.carousel-indicators li {
+  background-color: #808080;
+}

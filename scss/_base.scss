@@ -1,0 +1,30 @@
+@import "typography";
+:root {
+  --four-column: 4;
+  --three-column: 3;
+  --two-column: 2;
+  --one-column: 1;
+  --spacing: 2rem;
+  --transition: all 0.3s linear;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  font-family: $primary-font;
+  font-size: 1.6rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.scroll-body {
+  overflow: hidden;
+}
