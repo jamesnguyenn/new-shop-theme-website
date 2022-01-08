@@ -10,9 +10,9 @@ console.log(linkMenu);
 iconSticky.addEventListener("click", () => {
   menu.classList.toggle("menu-active");
 });
-// iconSticky.addEventListener("click", () => {
-//   menu.classList.toggle("sticky-menu");
-// });
+iconSticky.addEventListener("click", () => {
+  menu.classList.toggle("sticky-menu");
+});
 iconSticky.addEventListener("click", () => {
   iconSticky.classList.toggle("menu-sticky-cancel-active");
 });
